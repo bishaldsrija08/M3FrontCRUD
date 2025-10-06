@@ -1,21 +1,12 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Contact from "./Contact";
-import About from "./About";
-import UseState from "./UseState";
-import UseEffect from "./UseEffect";
+function App() {
 
-export default function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<h1>Hello World!</h1>} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/use-state" element={<UseState />} />
-          <Route path="/use-effect" element={<UseEffect />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="flex items-center justify-center min-h-screen bg-blue-600 text-white text-2xl font-bold">
+        Tailwind CSS v4 + React + Vite is working 🚀
+      </div>
     </>
   )
 }
+
+export default App
