@@ -1,12 +1,14 @@
-import { useEffect } from "react"
+import { use, useEffect, useState } from "react"
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
 import axios from "axios"
 
 const Home = () => {
+    const [blog, setBlog] = useState([])
     const fetchAllBlogs = async () => {
-        const response = await axios.get("http://localhost:3000//blogs")
-        console.log(response.data)
+        const response = await axios.get("http://localhost:3000/blogs")
+        const allBlogs = response.data.data
+        setBlog(allBlogs)
     }
     useEffect(() => {
         // fetch data from api
@@ -16,9 +18,7 @@ const Home = () => {
         <>
             <Navbar />
             <div className="flex flex-wrap justify-center m-3">
-                <Card />
-                <Card />
-                <Card />
+                {blog.map((blog, index) => <Card key={index} blog={blog} />)}
             </div>
         </>
     )
