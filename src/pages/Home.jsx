@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
 import axios from "axios"
-import { Link } from "react-router-dom"
 
 const Home = () => {
     const [blog, setBlog] = useState([])
@@ -11,7 +10,6 @@ const Home = () => {
         const allBlogs = response.data.data
         setBlog(allBlogs)
     }
-    console.log(blog)
     useEffect(() => {
         // fetch data from api
         fetchAllBlogs()
