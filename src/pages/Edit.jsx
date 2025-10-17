@@ -14,7 +14,7 @@ const Edit = () => {
     })
     const handleSubmit = async (e) => {
         e.preventDefault()
-       const response = await axios.patch(`http://localhost:3000/blog/${id}`, data, {
+       const response = await axios.patch(`https://m3firstproject.onrender.com/blog/${id}`, data, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
@@ -34,7 +34,7 @@ const Edit = () => {
 
     const fetchBlog = async () => {
         // fetch the blog data from the server and set it to the state
-        const response = await axios.get(`http://localhost:3000/blog/${id}`)
+        const response = await axios.get(`https://m3firstproject.onrender.com/blog/${id}`)
         setData(response.data.data)
     }
 

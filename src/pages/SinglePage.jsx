@@ -9,7 +9,7 @@ const SinglePage = () => {
     const [blog, setBlog] = useState({});
     // fetch single blog by id
     const fetchSingleBlog = async () => {
-        const response = await axios.get("http://localhost:3000/blog/" + id)
+        const response = await axios.get("https://m3firstproject.onrender.com/blog/" + id)
         setBlog(response.data.data)
     }
     useEffect(() => {
@@ -17,7 +17,7 @@ const SinglePage = () => {
     }, [])
 
     const deleteSingleBlog = async () => {
-        const response = await axios.delete("http://localhost:3000/blog/" + id)
+        const response = await axios.delete("https://m3firstproject.onrender.com/blog/" + id)
         if (response.status === 200) {
             alert("Blog deleted successfully")
             navigate("/")
@@ -37,14 +37,14 @@ const SinglePage = () => {
                     </h2>
                     {/* Author + Date */}
                     <div className="flex justify-center items-center space-x-3 text-sm text-gray-600">
-                        <img src={`http://localhost:3000/${blog.image}`} alt="Author" className="rounded-full w-10 h-10 border" />
+                        <img src={`https://m3firstproject.onrender.com/${blog.image}`} alt="Author" className="rounded-full w-10 h-10 border" />
                         <span>By <span className="font-semibold">Bishal Rijal</span></span>
                         <span>•</span>
                         <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
                     </div>
                 </header>
                 {/* Featured Image */}
-                <img src={`http://localhost:3000/${blog.image}`} alt="Blog Image" className="rounded-2xl shadow-lg mb-10 w-full object-cover" />
+                <img src={`https://m3firstproject.onrender.com/${blog.image}`} alt="Blog Image" className="rounded-2xl shadow-lg mb-10 w-full object-cover" />
                 {/* Blog Content */}
                 <article className="prose prose-lg max-w-none">
                     <p>{blog.description}</p>

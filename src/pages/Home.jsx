@@ -6,7 +6,7 @@ import axios from "axios"
 const Home = () => {
     const [blog, setBlog] = useState([])
     const fetchAllBlogs = async () => {
-        const response = await axios.get("http://localhost:3000/blogs")
+        const response = await axios.get("https://m3firstproject.onrender.com/blogs")
         const allBlogs = response.data.data
         setBlog(allBlogs)
     }
